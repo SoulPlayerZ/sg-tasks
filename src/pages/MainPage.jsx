@@ -1,9 +1,11 @@
 import Header from "../components/Header";
 
+
 function MainPage () {
   return(
     <section>
         <Header />
+
     </section>
   )
 }
