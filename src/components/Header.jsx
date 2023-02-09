@@ -1,17 +1,11 @@
-import { useContext } from "react";
-import TaskContext from "../context/TasksContext";
+import { useForm } from "react-hook-form";
 
 function Header () {
-  const { input, setInput } = useContext(TaskContext);
+  const {register, handleSubmit} = useForm();
   
-  const addTask = () => {
+  const addTask = (e) => {
 
-    console.log("aa");
-  }
-
-  const handleChange = ({ target }) => {
-    setInput(target.value);
-        
+    console.log(e);
   }
   
   return(
@@ -38,24 +32,24 @@ function Header () {
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-              <form>
+              <form onSubmit={handleSubmit(addTask)}>
                 <label>Task Title
-                  <input type="text" id="task-title" value={ input } onChange={ handleChange } required />
+                  <input type="text" {...register("title")} required />
                 </label>
                 <label>Description (Optional)
-                  <input type="text" id="task-description" value={ input} onChange={ handleChange } />
+                  <input type="text" {...register("description")}  />
                 </label>
                 <label>Start Date
-                  <input type="date" id="task-date-start" value={ input } onChange={ handleChange } />
+                  <input type="date"  {...register("date-start")} />
                 </label>
                 <label>Ends Date
-                  <input type="date" id="task-date-end" value={ input } onChange={ handleChange } />
+                  <input type="date" {...register("date-end")}  />
                 </label>
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  <button type="submit" className="btn btn-primary" >Save New Task</button>
+                </div>
               </form>
-            </div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-              <button type="button" className="btn btn-primary" onClick={addTask}>Save New Task</button>
             </div>
           </div>
         </div>
