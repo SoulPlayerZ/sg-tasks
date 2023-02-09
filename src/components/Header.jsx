@@ -1,8 +1,18 @@
-function Header () {
-  
-  const addTask = () => {
+import { useForm } from "react-hook-form";
 
-    console.log("aa");
+function Header () {
+  const {register, handleSubmit} = useForm();
+  
+  const addTask = (e) => {
+    let tasks = [];
+    if (localStorage.hasOwnProperty('form')) {
+      tasks = JSON.parse(localStorage.getItem('form'));
+      tasks.push(e);
+      localStorage.setItem('form', JSON.stringify(tasks));
+    }else {
+      tasks.push(e);
+      localStorage.setItem('form', JSON.stringify(tasks));
+    }
   }
   
   return(
@@ -29,24 +39,21 @@ function Header () {
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-              <form>
+              <form onSubmit={handleSubmit(addTask)}>
                 <label>Task Title
-                  <input type="text" required />
-                </label>
-                <label>Description (Optional)
-                  <input type="text" />
+                  <input type="text" {...register("title")} required />
                 </label>
                 <label>Start Date
-                  <input type="date" />
+                  <input type="date"  {...register("date-start")} />
                 </label>
                 <label>Ends Date
-                  <input type="date" />
+                  <input type="date" {...register("date-end")}  />
                 </label>
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  <button type="submit" className="btn btn-primary" >Save New Task</button>
+                </div>
               </form>
-            </div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-              <button type="button" className="btn btn-primary" onClick={addTask}>Save New Task</button>
             </div>
           </div>
         </div>

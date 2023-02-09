@@ -3,11 +3,11 @@ import TasksContext from "./TasksContext";
 
 function TasksProvider ({ children }) {
   const [allTasks, setAllTasks] = useState([]);
- 
-const contextValue = {
-  allTasks,
-  setAllTasks,
-};
+  
+  const contextValue = {
+    allTasks,
+    setAllTasks,
+  };
 
 return (
 <TasksContext.Provider value={contextValue}>
