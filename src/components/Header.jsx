@@ -4,8 +4,15 @@ function Header () {
   const {register, handleSubmit} = useForm();
   
   const addTask = (e) => {
-
-    console.log(e);
+    let tasks = [];
+    if (localStorage.hasOwnProperty('form')) {
+      tasks = JSON.parse(localStorage.getItem('form'));
+      tasks.push(e);
+      localStorage.setItem('form', JSON.stringify(tasks));
+    }else {
+      tasks.push(e);
+      localStorage.setItem('form', JSON.stringify(tasks));
+    }
   }
   
   return(
