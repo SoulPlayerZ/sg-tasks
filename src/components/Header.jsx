@@ -2,14 +2,7 @@ import { useContext } from "react";
 import TaskContext from "../context/TasksContext";
 
 function Header () {
-  const { inputTitle,
-    setInputTitle,
-    inputDescription,
-    setInputDescription,
-    inputDateStart,
-    setInputDateStart,
-    inputDateEnd,
-    setInputDateEnd } = useContext(TaskContext);
+  const { input, setInput } = useContext(TaskContext);
   
   const addTask = () => {
 
@@ -17,27 +10,8 @@ function Header () {
   }
 
   const handleChange = ({ target }) => {
-    switch (target.id) {
-      case "task-title":
-        setInputTitle(target.value);
-        console.log(target.value);
-        break;
-      case "task-description":
-        setInputDescription(target.value);
-        console.log(target.value);
-        break;
-      case "task-date-start":
-        setInputDateStart(target.value);
-        console.log(target.value);
-        break;
-      case "task-date-end":
-        setInputDateEnd(target.value);
-        console.log(target.value);
-        break;
-      default:
-        console.log('teste');  
-
-    }
+    setInput(target.value);
+        
   }
   
   return(
@@ -66,16 +40,16 @@ function Header () {
             <div className="modal-body">
               <form>
                 <label>Task Title
-                  <input type="text" id="task-title" value={ inputTitle } onChange={ handleChange } required />
+                  <input type="text" id="task-title" value={ input } onChange={ handleChange } required />
                 </label>
                 <label>Description (Optional)
-                  <input type="text" id="task-description" value={ inputDescription} onChange={ handleChange } />
+                  <input type="text" id="task-description" value={ input} onChange={ handleChange } />
                 </label>
                 <label>Start Date
-                  <input type="date" id="task-date-start" value={ inputDateStart } onChange={ handleChange } />
+                  <input type="date" id="task-date-start" value={ input } onChange={ handleChange } />
                 </label>
                 <label>Ends Date
-                  <input type="date" id="task-date-end" value={ inputDateEnd } onChange={ handleChange } />
+                  <input type="date" id="task-date-end" value={ input } onChange={ handleChange } />
                 </label>
               </form>
             </div>
