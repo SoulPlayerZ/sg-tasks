@@ -43,9 +43,6 @@ function Header () {
                 <label>Task Title
                   <input type="text" {...register("title")} required />
                 </label>
-                <label>Description (Optional)
-                  <input type="text" {...register("description")}  />
-                </label>
                 <label>Start Date
                   <input type="date"  {...register("date-start")} />
                 </label>
