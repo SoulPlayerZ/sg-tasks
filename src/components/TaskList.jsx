@@ -1,7 +1,5 @@
 import TaskCard from "./TaskCard";
 
-
-
 function TaskList () {
 
   const checkLocalStorage = localStorage.hasOwnProperty('form');

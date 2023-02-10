@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import TaskContext from "../context/TasksContext";
+import "../css/header.css";
 
 function Header () {
   const { inputs, setInputs } = useContext(TaskContext);
@@ -28,14 +29,14 @@ function Header () {
   
   return(
     <header>
-      <h1>SG Tasks</h1>
-      <label>
-        <select>
+      <label className="theme-label">Theme:
+        <select className="theme-select" >
             <option value="op1">op1</option>
             <option value="op2">op2</option>
             <option value="op3">op3</option>
         </select>
       </label>
+      <h1>SG Tasks</h1>
 
       <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Add New Task
