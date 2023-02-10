@@ -1,14 +1,13 @@
-function TaskCard () {
+function TaskCard ({ task }) {
 
+  return(
+    <section>
+      <h2>{task.title}</h2>
+      <p>{task.dateStart}</p>
+      <p>{task.dateEnd}</p>
+    </section>
 
-    return(
-      <section>
-        <h2>TASK TITLE</h2>
-        <p>DATA START</p>
-        <p>DATA END</p>
-      </section>
-
-    )
-    }
+  )
+}
   
   export default TaskCard;
