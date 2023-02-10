@@ -11,7 +11,7 @@ function TaskList () {
   return(
     <main>
       {!checkLocalStorage ? <h1>Tem nao</h1> : 
-        allTasks.map((task, index) =>  task={ task } /> )}
+        allTasks.map((task, index) =>  <TaskCard key={ task.title + index  } task={ task } /> )}
     </main>
   )
 }
