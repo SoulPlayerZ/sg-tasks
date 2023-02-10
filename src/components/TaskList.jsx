@@ -1,12 +1,17 @@
 import TaskCard from "./TaskCard";
 
 
+
 function TaskList () {
+
+  const checkLocalStorage = localStorage.hasOwnProperty('form');
+  const allTasks = JSON.parse(localStorage.getItem('form'));
 
 
   return(
     <main>
-      <TaskCard />
+      {!checkLocalStorage ? <h1>Tem nao</h1> : 
+        allTasks.map((task, index) =>  task={ task } /> )}
     </main>
   )
 }
