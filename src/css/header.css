@@ -24,3 +24,16 @@ header {
 .btn-secondary {
   margin-right: 20px;
 }
+
+.modal-title {
+  color: rgb(31, 31, 77);
+}
+
+.task-text {
+  color: rgb(31, 31, 77);
+  margin: 20px;
+}
+
+input {
+  margin: 10px;
+}

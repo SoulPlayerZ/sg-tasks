@@ -31,7 +31,7 @@ function Header () {
     <header>
       <label className="theme-label">Theme:
         <select className="theme-select" >
-            <option value="op1">op1</option>
+            <option value="Default">Default</option>
             <option value="op2">op2</option>
             <option value="op3">op3</option>
         </select>
@@ -52,13 +52,13 @@ function Header () {
             </div>
             <div className="modal-body">
               <form onSubmit={addTask}>
-                <label>Task Title
+                <label className="task-text">Task Title
                   <input type="text" name="title" onChange={handleChange} value={ inputs.title } required />
                 </label>
-                <label>Start Date
+                <label className="task-text">Start Date
                   <input type="date" name="dateStart" onChange={handleChange} value={ inputs.dateStart } required />
                 </label>
-                <label>Ends Date
+                <label className="task-text">End Date
                   <input type="date" name="dateEnd" onChange={handleChange} value={ inputs.dateEnd } required />
                 </label>
                 <div className="modal-footer">
