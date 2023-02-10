@@ -1,6 +1,13 @@
+import TaskCard from "./TaskCard";
+
+
 function TaskList () {
+
+
   return(
-    <main>TASK LIST</main>
+    <main>
+      <TaskCard />
+    </main>
   )
 }
 
