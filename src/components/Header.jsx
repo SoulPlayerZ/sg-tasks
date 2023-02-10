@@ -9,7 +9,7 @@ function Header () {
     setInputs(value);
   }
   
-  const addTask = (e) => {
+  const addTask = () => {
     let tasks = [];
     if (localStorage.hasOwnProperty('form')) {
       tasks = JSON.parse(localStorage.getItem('form'));
@@ -21,8 +21,8 @@ function Header () {
     }
     setInputs({
       title: '',
-      dataStart: '',
-      dataEnd: '',
+      dateStart: '',
+      dateEnd: '',
     })
   }
   
@@ -55,10 +55,10 @@ function Header () {
                   <input type="text" name="title" onChange={handleChange} value={ inputs.title } required />
                 </label>
                 <label>Start Date
-                  <input type="date" name="dataStart" onChange={handleChange} value={ inputs.dataStart } required />
+                  <input type="date" name="dateStart" onChange={handleChange} value={ inputs.dateStart } required />
                 </label>
                 <label>Ends Date
-                  <input type="date" name="dataEnd" onChange={handleChange} value={ inputs.dataEnd } required />
+                  <input type="date" name="dateEnd" onChange={handleChange} value={ inputs.dateEnd } required />
                 </label>
                 <div className="modal-footer">
                   <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

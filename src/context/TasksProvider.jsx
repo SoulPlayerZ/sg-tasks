@@ -4,8 +4,8 @@ import TasksContext from "./TasksContext";
 function TasksProvider ({ children }) {
   const [inputs, setInputs ] = useState({
     title: '',
-    dataStart: '',
-    dataEnd: '',
+    dateStart: '',
+    dateEnd: '',
   });
   
   const contextValue = {
