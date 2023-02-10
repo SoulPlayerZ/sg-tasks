@@ -1,18 +1,29 @@
-import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import TaskContext from "../context/TasksContext";
 
 function Header () {
-  const {register, handleSubmit} = useForm();
+  const { inputs, setInputs } = useContext(TaskContext);
+
+  const handleChange = ({ target }) => {
+    const value = {...inputs, [target.name]: target.value};
+    setInputs(value);
+  }
   
   const addTask = (e) => {
     let tasks = [];
     if (localStorage.hasOwnProperty('form')) {
       tasks = JSON.parse(localStorage.getItem('form'));
-      tasks.push(e);
+      tasks.push(inputs);
       localStorage.setItem('form', JSON.stringify(tasks));
     }else {
-      tasks.push(e);
+      tasks.push(inputs);
       localStorage.setItem('form', JSON.stringify(tasks));
     }
+    setInputs({
+      title: '',
+      dataStart: '',
+      dataEnd: '',
+    })
   }
   
   return(
@@ -39,15 +50,15 @@ function Header () {
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-              <form onSubmit={handleSubmit(addTask)}>
+              <form onSubmit={addTask}>
                 <label>Task Title
-                  <input type="text" {...register("title")} required />
+                  <input type="text" name="title" onChange={handleChange} value={ inputs.title } required />
                 </label>
                 <label>Start Date
-                  <input type="date"  {...register("date-start")} />
+                  <input type="date" name="dataStart" onChange={handleChange} value={ inputs.dataStart } required />
                 </label>
                 <label>Ends Date
-                  <input type="date" {...register("date-end")}  />
+                  <input type="date" name="dataEnd" onChange={handleChange} value={ inputs.dataEnd } required />
                 </label>
                 <div className="modal-footer">
                   <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

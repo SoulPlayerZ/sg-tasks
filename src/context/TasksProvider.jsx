@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import TasksContext from "./TasksContext";
 
 function TasksProvider ({ children }) {
-  const [allTasks, setAllTasks] = useState([]);
+  const [inputs, setInputs ] = useState({
+    title: '',
+    dataStart: '',
+    dataEnd: '',
+  });
   
   const contextValue = {
-    allTasks,
-    setAllTasks,
+    inputs, setInputs,
   };
 
 return (
