@@ -5,10 +5,11 @@
   border: 2px solid white;
   border-radius: 15px;
   padding: 20px;
-  margin-right: 20px;
+  margin-right: 30px;
   word-wrap: break-word;
   width: 20em;
   max-height: 12em;
+  pointer-events: none;
 }
 
 .task-card h2 {
