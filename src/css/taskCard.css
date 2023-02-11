@@ -8,7 +8,7 @@
   margin: 30px;
   word-wrap: break-word;
   width: 20em;
-  height: 20em;
+  max-height: 12em;
 }
 
 .task-card h2 {
