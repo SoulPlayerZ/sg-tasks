@@ -1,4 +1,5 @@
 import TaskCard from "./TaskCard";
+import  "../css/taskList.css";
 
 function TaskList () {
 
