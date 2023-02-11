@@ -3,5 +3,5 @@ main {
   flex-flow: row wrap;
   justify-content: center;
   width: 80%;
-  margin: 50px auto;
+  margin: 50px auto 0 auto;
 }

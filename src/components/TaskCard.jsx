@@ -3,7 +3,7 @@ import "../css/taskCard.css";
 function TaskCard ({ task }) {
 
   return(
-    <section className={`${localStorage.getItem('theme') || 'default'} task-card`}>
+    <section className="default task-card">
       <h2>{task.title}</h2>
       <section className="date-container">
         <p>{`Início: ${task.dateStart}`}</p>
