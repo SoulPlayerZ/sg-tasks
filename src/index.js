@@ -2,13 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import TasksProvider from './context/TasksProvider';
+import ThemeProvider from './context/ThemeProvider';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <TasksProvider>
-      <App />
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </TasksProvider>
   </React.StrictMode>
 );
