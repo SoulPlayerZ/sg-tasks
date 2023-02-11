@@ -31,9 +31,13 @@ function Header () {
     <header>
       <label className="theme-label">Theme:
         <select className="theme-select" >
-            <option value="Default">Default</option>
-            <option value="op2">op2</option>
-            <option value="op3">op3</option>
+          <option value="default">Default</option>
+          <option value="trans">Trans</option>
+          <option value="gay">Gay</option>
+          <option value="bi">Bi</option>
+          <option value="pan">Pan</option>
+          <option value="non-binary">Non Binary</option>
+          <option value="fluid">Fluid</option>
         </select>
       </label>
       <h1>SG Tasks</h1>
