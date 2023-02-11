@@ -1,8 +1,11 @@
 import { useContext } from "react";
 import TaskContext from "../context/TasksContext";
+import ThemeContext from "../context/ThemeContext";
+import "../css/header.css";
 
 function Header () {
   const { inputs, setInputs } = useContext(TaskContext);
+  const { setTheme } = useContext(ThemeContext);
 
   const handleChange = ({ target }) => {
     const value = {...inputs, [target.name]: target.value};
@@ -25,17 +28,26 @@ function Header () {
       dateEnd: '',
     })
   }
+
+  const changeTheme = ({ target }) => {
+    localStorage.setItem('theme', target.value);
+    setTheme(target.value);
+  }
   
   return(
     <header>
-      <h1>SG Tasks</h1>
-      <label>
-        <select>
-            <option value="op1">op1</option>
-            <option value="op2">op2</option>
-            <option value="op3">op3</option>
+      <label className="theme-label">Cards:
+      <select className="theme-select"  id="theme" onChange={changeTheme} value={ localStorage.getItem('theme') || 'default' }>
+          <option value="default">Default</option>
+          <option value="trans">Trans</option>
+          <option value="gay">Gay</option>
+          <option value="bi">Bi</option>
+          <option value="pan">Pan</option>
+          <option value="non-binary">Non Binary</option>
+          <option value="fluid">Fluid</option>
         </select>
       </label>
+      <h1 className="logo">SG Tasks</h1>
 
       <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Add New Task
@@ -51,13 +63,13 @@ function Header () {
             </div>
             <div className="modal-body">
               <form onSubmit={addTask}>
-                <label>Task Title
-                  <input type="text" name="title" onChange={handleChange} value={ inputs.title } required />
+                <label className="task-text">Task Title
+                  <input type="text" name="title" onChange={handleChange} value={ inputs.title } maxLength="30" required />
                 </label>
-                <label>Start Date
+                <label className="task-text">Start Date
                   <input type="date" name="dateStart" onChange={handleChange} value={ inputs.dateStart } required />
                 </label>
-                <label>Ends Date
+                <label className="task-text">End Date
                   <input type="date" name="dateEnd" onChange={handleChange} value={ inputs.dateEnd } required />
                 </label>
                 <div className="modal-footer">
