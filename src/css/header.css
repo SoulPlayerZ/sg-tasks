@@ -1,7 +1,17 @@
+@font-face {
+  font-family: RighteousRegular;
+  src: url("../font/Righteous-Regular.ttf");
+}
+
 header {
   display: flex;
   justify-content: space-around;
   padding: 40px;
+}
+
+.logo {
+  font-family: RighteousRegular, sans-serif;
+  font-size: 50px;
 }
 
 .theme-label {

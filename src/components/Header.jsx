@@ -47,7 +47,7 @@ function Header () {
           <option value="fluid">Fluid</option>
         </select>
       </label>
-      <h1>SG Tasks</h1>
+      <h1 className="logo">SG Tasks</h1>
 
       <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Add New Task
