@@ -1,8 +1,9 @@
 .task-list {
   display: flex;
   justify-content: center;
-  max-width: 900px;
-  margin: 50px auto 0 auto;
+  width: 60%;
+  max-height: 60vh;
+  margin: 10% auto 0 auto;
   cursor: grab;
   overflow: hidden;
 }

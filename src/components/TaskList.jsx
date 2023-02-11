@@ -19,7 +19,11 @@ function TaskList () {
 
   return(
     <motion.main ref={ carousel }  className="task-list" whileTap={{ cursor: "grabbing" }}>
-      <motion.section className="inner-carousel" drag="x" dragConstraints={{ right: 0, left: -width}}>
+      <motion.section className="inner-carousel" drag="x" dragConstraints={{ right: width, left: -width}}
+        initial={{x: 200}}
+        animate={{x: width}}
+        transition={{ duration: 1 }}
+      >
         {!checkLocalStorage ? <h1>Tem nao</h1> : 
           allTasks.map((task, index) =>  <TaskCard key={ task.title + index  } task={ task } /> )}
       </motion.section>

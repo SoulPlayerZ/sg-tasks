@@ -12,7 +12,7 @@ function MainPage () {
   })
 
   return(
-    <section className={localStorage.getItem('theme') || 'default'}>
+    <section className={` ${localStorage.getItem('theme') || 'default'} mainpage`}>
         <Header />
         <TaskList />
     </section>

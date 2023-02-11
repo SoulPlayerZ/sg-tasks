@@ -1,3 +1,7 @@
+.mainpage {
+  height: 100vh;
+}
+
 .default {
     background-color: rgb(31, 31, 77);
     color: #FCFCFC;
