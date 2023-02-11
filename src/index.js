@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import CarouselProvider from './context/CarouselProvider';
 import TasksProvider from './context/TasksProvider';
 import ThemeProvider from './context/ThemeProvider';
 import reportWebVitals from './reportWebVitals';
@@ -10,7 +11,9 @@ root.render(
   <React.StrictMode>
     <TasksProvider>
       <ThemeProvider>
-        <App />
+        <CarouselProvider>
+          <App />
+        </CarouselProvider>
       </ThemeProvider>
     </TasksProvider>
   </React.StrictMode>

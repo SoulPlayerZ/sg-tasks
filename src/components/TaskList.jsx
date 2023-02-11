@@ -1,5 +1,6 @@
 import TaskCard from "./TaskCard";
 import  "../css/taskList.css";
+import { motion } from "framer-motion";
 
 function TaskList () {
 
@@ -8,10 +9,12 @@ function TaskList () {
 
 
   return(
-    <main>
-      {!checkLocalStorage ? <h1>Tem nao</h1> : 
-        allTasks.map((task, index) =>  <TaskCard key={ task.title + index  } task={ task } /> )}
-    </main>
+    <motion.main className="task-list" whileTap={{ cursor: "grabbing" }}>
+      <motion.section className="inner-carousel" drag="x">
+        {!checkLocalStorage ? <h1>Tem nao</h1> : 
+          allTasks.map((task, index) =>  <TaskCard key={ task.title + index  } task={ task } /> )}
+      </motion.section>
+    </motion.main>
   )
 }
 
