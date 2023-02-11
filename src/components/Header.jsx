@@ -36,7 +36,7 @@ function Header () {
   
   return(
     <header>
-      <label className="theme-label">Cards:
+      <label className="theme-label">Theme:
       <select className="theme-select"  id="theme" onChange={changeTheme} value={ localStorage.getItem('theme') || 'default' }>
           <option value="default">Default</option>
           <option value="trans">Trans</option>
