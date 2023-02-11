@@ -1,3 +1,22 @@
 .task-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border: 2px solid white;
+  padding: 30px;
+  margin: 30px;
+  word-wrap: break-word;
+  width: 20em;
+  height: 20em;
+}
+
+.task-card h2 {
+  text-align: center;
+  margin-bottom: 20%;
+}
+
+.date-container {
+  display: flex;
+  justify-content: space-between;
+  
 }

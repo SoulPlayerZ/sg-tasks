@@ -53,7 +53,7 @@ function Header () {
             <div className="modal-body">
               <form onSubmit={addTask}>
                 <label className="task-text">Task Title
-                  <input type="text" name="title" onChange={handleChange} value={ inputs.title } required />
+                  <input type="text" name="title" onChange={handleChange} value={ inputs.title } maxLength="30" required />
                 </label>
                 <label className="task-text">Start Date
                   <input type="date" name="dateStart" onChange={handleChange} value={ inputs.dateStart } required />

@@ -5,8 +5,10 @@ function TaskCard ({ task }) {
   return(
     <section className="task-card">
       <h2>{task.title}</h2>
-      <p>{task.dateStart}</p>
-      <p>{task.dateEnd}</p>
+      <section className="date-container">
+        <p>{`Início: ${task.dateStart}`}</p>
+        <p>{`Fim: ${task.dateEnd}`}</p>
+      </section>
     </section>
 
   )
