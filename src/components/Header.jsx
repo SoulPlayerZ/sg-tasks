@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import TaskContext from "../context/TasksContext";
+import ThemeContext from "../context/ThemeContext";
 import "../css/header.css";
 
 function Header () {
   const { inputs, setInputs } = useContext(TaskContext);
+  const { setTheme } = useContext(ThemeContext);
 
   const handleChange = ({ target }) => {
     const value = {...inputs, [target.name]: target.value};
@@ -26,11 +28,16 @@ function Header () {
       dateEnd: '',
     })
   }
+
+  const changeTheme = ({ target }) => {
+    localStorage.setItem('theme', target.value);
+    setTheme(target.value);
+  }
   
   return(
     <header>
-      <label className="theme-label">Theme:
-        <select className="theme-select" >
+      <label className="theme-label">Cards:
+      <select className="theme-select"  id="theme" onChange={changeTheme} value={ localStorage.getItem('theme') || 'default' }>
           <option value="default">Default</option>
           <option value="trans">Trans</option>
           <option value="gay">Gay</option>

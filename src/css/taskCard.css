@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   border: 2px solid white;
+  border-radius: 15px;
   padding: 30px;
   margin: 30px;
   word-wrap: break-word;
@@ -18,5 +19,53 @@
 .date-container {
   display: flex;
   justify-content: space-between;
-  
+}
+
+.default {
+  background-color: rgb(31, 31, 77);
+  color: #FCFCFC;
+  box-shadow: #FCFCFC 2px 2px 15px 1px;
+  user-select: none;
+}
+
+.bi {
+  background-image: linear-gradient(180deg, #B00B69, #A55EA7, #1D1CC9);
+  color: #FCFCFC;
+  box-shadow: #FCFCFC 2px 2px 15px 1px;
+  user-select: none;
+}
+
+.gay {
+  background-image: linear-gradient(180deg, #E40303, #FF8C00, #FFED00, #008026, #004DFF, #750787);
+  color: rgb(18, 16, 163);
+  box-shadow: #FCFCFC 2px 2px 15px 1px;
+  user-select: none;
+}
+
+.trans {
+  background-image: linear-gradient(180deg, #55CDFC, #F5ABBB, #F1F1F1, #F5ABBC,#55CDFC);
+  color: rgb(95, 16, 173);
+  box-shadow: #FCFCFC 2px 2px 15px 1px;
+  user-select: none;
+}
+
+.pan {
+  background-image: linear-gradient(180deg, #FF218C, #FFD800, #21B1FF);
+  color: rgb(95, 16, 173);
+  box-shadow: #FCFCFC 2px 2px 15px 1px;
+  user-select: none;
+}
+
+.non-binary {
+  background-image: linear-gradient(180deg, #FCF434, #FCFCFC, #9C59D1, #2C2C2C);
+  color: rgb(95, 16, 173);
+  box-shadow: #FCFCFC 2px 2px 15px 1px;
+  user-select: none;
+}
+
+.fluid{
+  background-image: linear-gradient(180deg, #FF75A2, #F1F1F1, #BE18D6, #2C2C2C, #333EBD);
+  color: rgb(18, 16, 163);
+  box-shadow: #FCFCFC 2px 2px 15px 1px;
+  user-select: none;
 }
