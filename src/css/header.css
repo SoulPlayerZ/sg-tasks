@@ -45,3 +45,42 @@ header {
 input {
   margin: 10px;
 }
+
+@media screen and (max-width: 640px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .logo {
+    margin-right: 10px;
+  }
+
+  header .btn {
+    margin: 10px 5px 0 0;
+  }
+
+  header select {
+    margin-top: 10px;
+  }
+}
+
+
+@media screen and (max-width: 640px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .logo {
+    font-size: 35px;
+    margin-top: 10px;
+  }
+
+  header .btn {
+    padding: 5px 2px 5px 2px;
+  }
+}
