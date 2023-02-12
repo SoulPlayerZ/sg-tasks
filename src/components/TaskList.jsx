@@ -24,7 +24,7 @@ function TaskList () {
         animate={{x: width}}
         transition={{ duration: 1 }}
       >
-        {!checkLocalStorage ? <h1>Tem nao</h1> : 
+        {!checkLocalStorage ? <h2>You have no tasks</h2> : 
           allTasks.map((task, index) =>  <TaskCard key={ task.title + index  } task={ task } /> )}
       </motion.section>
     </motion.main>
