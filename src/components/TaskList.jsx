@@ -20,7 +20,7 @@ function TaskList () {
   return(
     <motion.main ref={ carousel }  className="task-list" whileTap={{ cursor: "grabbing" }}>
       <motion.section className="inner-carousel" drag="x" dragConstraints={{ right: width, left: -width}}
-        initial={{x: 200}}
+        initial={{x: 0}}
         animate={{x: width}}
         transition={{ duration: 1 }}
       >
